@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。1. JavaScript 无块级作用域什么是块级作用域？其实就是占地盘，画个圈圈说这块地盘是我的，只有我能在这个区域里作，例如，这个 “{ }” 大括号。那无块级作用域又是什么意思呢？就是即便你画了个圈，但凭啥你说这是你地盘就是你地盘，我在圈外面就想插一脚玩玩">
+<meta name="description" content="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解 JavaScript 作用域">
-<meta property="og:url" content="http://www.jetwll.com/2017/03/17/测试文章/index.html">
+<meta property="og:url" content="http://www.jetwll.com/2017/03/17/详解 JavaScript 作用域/index.html">
 <meta property="og:site_name" content="王蕾蕾的个人博客">
-<meta property="og:description" content="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。1. JavaScript 无块级作用域什么是块级作用域？其实就是占地盘，画个圈圈说这块地盘是我的，只有我能在这个区域里作，例如，这个 “{ }” 大括号。那无块级作用域又是什么意思呢？就是即便你画了个圈，但凭啥你说这是你地盘就是你地盘，我在圈外面就想插一脚玩玩">
-<meta property="og:updated_time" content="2017-03-20T17:24:09.963Z">
+<meta property="og:description" content="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。">
+<meta property="og:updated_time" content="2017-03-23T15:49:35.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解 JavaScript 作用域">
-<meta name="twitter:description" content="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。1. JavaScript 无块级作用域什么是块级作用域？其实就是占地盘，画个圈圈说这块地盘是我的，只有我能在这个区域里作，例如，这个 “{ }” 大括号。那无块级作用域又是什么意思呢？就是即便你画了个圈，但凭啥你说这是你地盘就是你地盘，我在圈外面就想插一脚玩玩">
+<meta name="twitter:description" content="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。">
 
 
 
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://www.jetwll.com/2017/03/17/测试文章/"/>
+  <link rel="canonical" href="http://www.jetwll.com/2017/03/17/详解 JavaScript 作用域/"/>
 
 
 
@@ -211,16 +211,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -237,6 +227,26 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -303,7 +313,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.jetwll.com/2017/03/17/测试文章/">
+    <link itemprop="mainEntityOfPage" href="http://www.jetwll.com/2017/03/17/详解 JavaScript 作用域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JETWLL">
@@ -375,7 +385,8 @@
       
 
       
-        <h4 id="JavaScript-的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。"><a href="#JavaScript-的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。" class="headerlink" title="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。"></a>JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。</h4><h5 id="1-JavaScript-无块级作用域"><a href="#1-JavaScript-无块级作用域" class="headerlink" title="1. JavaScript 无块级作用域"></a>1. JavaScript 无块级作用域</h5><p>什么是块级作用域？其实就是占地盘，画个圈圈说这块地盘是我的，只有我能在这个区域里作，例如，这个 “{ }” 大括号。<br>那无块级作用域又是什么意思呢？就是即便你画了个圈，但凭啥你说这是你地盘就是你地盘，我在圈外面就想插一脚玩玩。<br>例子1：<br>JavaScript 无块级作用域<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>)  </span>&#123; </div><div class="line">     <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</div><div class="line">          <span class="keyword">var</span> name = <span class="string">'yes'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">&#125;;</div><div class="line">Fun();</div><div class="line"><span class="comment">// yes</span></div></pre></td></tr></table></figure></p>
+        <h4 id="JavaScript-的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。"><a href="#JavaScript-的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。" class="headerlink" title="JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。"></a>JavaScript 的作用域一直是前端开发和前端面试中难以理解的知识点，一不留神就入坑了，小编写这篇文章，就是来填坑的，好了，直接开始。</h4><a id="more"></a>
+<h5 id="1-JavaScript-无块级作用域"><a href="#1-JavaScript-无块级作用域" class="headerlink" title="1. JavaScript 无块级作用域"></a>1. JavaScript 无块级作用域</h5><p>什么是块级作用域？其实就是占地盘，画个圈圈说这块地盘是我的，只有我能在这个区域里作，例如，这个 “{ }” 大括号。<br>那无块级作用域又是什么意思呢？就是即便你画了个圈，但凭啥你说这是你地盘就是你地盘，我在圈外面就想插一脚玩玩。<br>例子1：<br>JavaScript 无块级作用域<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>)  </span>&#123; </div><div class="line">     <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</div><div class="line">          <span class="keyword">var</span> name = <span class="string">'yes'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">&#125;;</div><div class="line">Fun();</div><div class="line"><span class="comment">// yes</span></div></pre></td></tr></table></figure></p>
 <p>这里 if(true) 后面的 {…} 是一个块级作用域，根据输出结果，可以知道 console.log(name) 是可以访问 var name = ‘yes’ 的，等同于别人在你家门外就能拿你家里的东西。<br>不过在 ES6 中，引入了 let 关键字，用于指定变量属于块级作用域。也就是说JavaScript 也有块级作用域了。<br>例子2：<br>JavaScript 有块级作用域<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>)  </span>&#123; </div><div class="line">     <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</div><div class="line">          <span class="keyword">let</span> name = <span class="string">'yes'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">&#125;;</div><div class="line">Fun();</div><div class="line"><span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
 <p>引用 let 替换 var 后，生成了块级作用域，console.log(name) 访问不到大括号里面的内容了。</p>
 <h5 id="2-JavaScript-函数作用域"><a href="#2-JavaScript-函数作用域" class="headerlink" title="2. JavaScript 函数作用域"></a>2. JavaScript 函数作用域</h5><p>JavaScript 中每个函数作为一个作用域，外部是无法访问作用域内部的变量的。<br>例子3：<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> y = <span class="number">2</span>;</div><div class="line">    <span class="built_in">console</span>.log(x); </div><div class="line">&#125;</div><div class="line">Fun();</div><div class="line"><span class="built_in">console</span>.log(y);</div><div class="line"><span class="comment">// 1   ReferenceError: y is not defined......</span></div></pre></td></tr></table></figure></p>
@@ -453,6 +464,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/19/JavaScript 中构造函数与 new 命令/" rel="prev" title="JavaScript 中构造函数与 new 命令">
+                JavaScript 中构造函数与 new 命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -515,7 +530,7 @@
                alt="JETWLL" />
           <p class="site-author-name" itemprop="name">JETWLL</p>
            
-              <p class="site-description motion-element" itemprop="description">多挣点钱，养活自己</p>
+              <p class="site-description motion-element" itemprop="description">机会总是留给有准备的人</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -523,7 +538,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -536,7 +551,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -629,7 +644,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -700,13 +715,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
