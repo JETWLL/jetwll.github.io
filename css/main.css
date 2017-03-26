@@ -1684,7 +1684,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4a9cff;
+  background: #418ac4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2771,4 +2771,21 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+body {
+  position: relative;
+  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  color: #555;
+  background: #f5f5dc;
+}
+.header {
+  background: #f5f5f5;
+}
+.footer {
+  margin-top: 80px;
+  color: #666;
+  padding: 10px 0px;
+  background: rgba(135,218,255,0.75);
 }
